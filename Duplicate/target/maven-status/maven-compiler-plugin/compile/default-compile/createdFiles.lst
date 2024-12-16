@@ -1,0 +1,4 @@
+com\soul\hope\Entity\UserEntity.class
+com\soul\hope\Repository\UserRepo.class
+com\soul\hope\Controller\UserController.class
+com\soul\hope\DuplicateApplication.class
