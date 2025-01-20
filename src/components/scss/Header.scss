@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1.5rem;
+  background-color: white;
+  border-radius: 20px; /* Modern rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 5px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  &__menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    margin-right: 1rem;
+
+    @media (max-width: 768px) {
+      display: block;
+      position: relative;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+     margin-left: 10px;
+    &-img {
+      width: 135px;
+      height: auto;
+    }
+
+    @media (max-width: 768px) {
+      order: 1;
+    }
+  }
+
+  &__nav {
+    display: flex;
+    gap: 3rem;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: 0.8rem;
+      width: 100%;
+      background-color: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      padding: 1rem;
+      transform: translateY(-100%);
+      transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+      visibility: hidden;
+      opacity: 0;
+
+      &.active {
+        transform: translateY(0);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    font-size: 1rem;
+    color: black;
+    font-weight: 500;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #008080;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 1rem;
+
+    &-btn {
+      background-color: #202830;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: #3c4a56;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 0.9rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap; /* Ensure content doesn't overlap */
+    .header__nav.active {
+      margin-bottom: calc(100vh - 50px); /* Adjust this value based on the height of your menu */
+    }
+  }
+}

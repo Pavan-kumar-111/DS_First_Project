@@ -1,0 +1,198 @@
+/* General Container Styles */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 1rem;
+  margin-bottom: 2rem;
+
+  .register-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Full width for center alignment */
+    margin: 1rem 0; /* Top and bottom margin for spacing */
+    gap: 2rem; /* Gap between links */
+
+    .register-option {
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #007bff;
+      position: relative;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #0056b3;
+      }
+
+      .option-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        i {
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+
+        span {
+          position: relative;
+          padding-bottom: 0.2rem;
+
+          &::after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background-color: #007bff;
+            bottom: -0.1rem;
+            left: 0;
+            transition: transform 0.3s ease;
+            transform: scaleX(0);
+          }
+        }
+      }
+
+      &:hover .option-box span::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+
+  .login-wrapper {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+  }
+
+  .login-form-container {
+    flex: 1;
+    padding: 2rem 3rem; /* Added padding for space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .login-heading {
+      text-align: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #333;
+      font-weight: 700;
+    }
+
+    .login-subheading {
+      text-align: center;
+      margin-bottom: 2rem;
+      font-size: 1rem;
+      color: #666;
+    }
+
+    .login-form {
+      width: 100%;
+
+      .form-label {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .form-control {
+        border-radius: 4px;
+        padding: 0.75rem;
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        width: 100%;
+        box-sizing: border-box;
+
+        &:focus {
+          border-color: #007bff;
+          outline: none;
+          box-shadow: 0 0 4px rgba(0, 123, 255, 0.25);
+        }
+      }
+    }
+
+    .login-button {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1.1rem;
+      background-color: #00aaff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:disabled {
+        background-color: #6c757d;
+      }
+
+      &:hover:not(:disabled) {
+        background-color: #008cba;
+      }
+    }
+
+    .login-links {
+      text-align: center;
+      margin-top: 1rem;
+
+      a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #007bff;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .login-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .login-wrapper {
+    flex-direction: column;
+  }
+
+  .login-image-container {
+    display: none !important;
+  }
+
+  .register-options {
+    flex-direction: column;
+    align-items: center;
+
+    .register-option {
+      margin-bottom: 1rem;
+
+      .option-box {
+        width: 100%;
+      }
+    }
+  }
+}

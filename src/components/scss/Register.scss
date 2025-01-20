@@ -1,0 +1,232 @@
+.register-page {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 120px;
+  margin-top: 0px;
+}
+
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0.5vh;
+  margin-bottom: 3rem;
+
+  .register-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping */
+    max-width: 900px;
+    width: 100%;
+  }
+
+  .register-form-container {
+    flex: 1;
+    padding: 2rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .register-heading {
+      align-self: self-start;
+      font-size: 1.8rem;
+      margin-bottom: 0px;
+      margin-top: 0px;
+      color: #333;
+    }
+
+    .register-subheading {
+      text-align: center;
+      font-size: 1rem;
+      color: #666;
+      padding: 50rem;
+    }
+
+    .register-form {
+      width: 100%;
+
+      .form-label {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .form-control,
+      .form-select {
+        border-radius: 4px;
+        border: 1px solid #efeeee;
+        background-color: #e1e3e6;
+        padding: 10px;
+        width: 18rem;
+        font-size: 1.0rem;
+        margin-bottom: 3px;
+
+        &:focus {
+          border-color: #f6f9f9;
+          outline: none;
+          box-shadow: #d1d4d4;
+        }
+      }
+
+      .error {
+        color: #dc3545;
+        font-size: 0.875rem;
+        margin-top: 0.2rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .register-button {
+        background-color: #0cc0df;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 15px;
+        margin-left: 7rem;
+
+        &:hover {
+          background-color: #1cf380;
+        }
+      }
+    }
+
+    .login-links {
+      text-align: center;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      align-self: self-start;
+
+      a {
+        font-size: 0.9rem;
+        text-decoration: none;
+        color: #0cc0df;
+
+        &:hover {
+          text-decoration-color: #0097b2;
+        }
+
+        .fas.fa-user-plus {
+          margin-right: 0.3rem;
+        }
+      }
+    }
+
+    .alert {
+      width: 18rem;
+      border-radius: 4px;
+      margin-bottom: 1rem;
+
+      &.alert-success {
+        background-color: rgb(47, 207, 47);
+        color: white;
+        border: 1px solid #b7b9b7;
+      }
+
+      &.alert-danger {
+        background-color: #f8d7da;
+        color: #721c24;
+        border: 1px solid #f5c6cb;
+      }
+    }
+  }
+
+  .register-image-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    margin-left: 3rem; /* Added more margin for space */
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.register-options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; // Full width for center alignment
+  margin: 1rem; 
+  margin-bottom: 0px;
+  gap: 2rem; // Gap between links
+
+  .register-option {
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    position: relative;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: #0056b3;
+    }
+
+    .option-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      i {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      span {
+        position: relative;
+        padding-bottom: 0.2rem;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 2px;
+          background-color: #007bff;
+          bottom: -0.1rem;
+          left: 0;
+          transition: transform 0.3s ease;
+          transform: scaleX(0);
+        }
+      }
+    }
+    &:hover .option-box span::after {
+      transform: scaleX(1);
+    }
+  }
+}
+
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .register-wrapper {
+    flex-direction: column;
+  }
+
+  .register-image-container {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .register-container {
+    padding: 10px;
+  }
+
+  .register-card {
+    padding: 10px;
+  }
+
+  .register-button {
+    width: 100%;
+  }
+}

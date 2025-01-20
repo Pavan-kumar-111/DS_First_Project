@@ -1,0 +1,340 @@
+/* Importing Sass color module */
+@use 'sass:color';
+
+/* Global Variables */
+$app-main: #17a9aa;
+$app-accent: #0cc0df;
+$app-dark-blue: #004aad;
+$app-light-blue: #0097b2;
+$app-background: #f8f9fa;
+$app-white: #fff;
+$app-border: #ddd;
+$app-text-dark: #555;
+$app-primary: #007bff;
+$app-error: red;
+
+$border-radius: 6px;
+$box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+$container-padding: 20px;
+
+// Breakpoints
+$breakpoint-md: 768px;
+$breakpoint-sm: 576px;
+
+// Global Styles
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: $app-background;
+  color: $app-text-dark;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: $container-padding;
+  width: 100%;
+  flex-grow: 1; /* Ensures the container fills available space */
+}
+
+/* Navbar */
+.navbar {
+  background-color: $app-white;
+  box-shadow: $box-shadow;
+  padding: 10px 20px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  .logo {
+    font-weight: bold;
+    color: $app-main;
+  }
+
+  .nav-link {
+    color: $app-dark-blue;
+    margin-right: 10px;
+
+    &:hover {
+      color: $app-accent;
+    }
+  }
+
+  .login-btn {
+    background-color: $app-main;
+    color: $app-white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: $border-radius;
+    font-size: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $app-accent;
+    }
+  }
+}
+
+/* Hero Section */
+.hero-section {
+  background-color: $app-main;
+  color: $app-white;
+  padding: 100px 20px 50px;
+  text-align: center;
+  flex-grow: 1; /* Fullscreen flex for hero section */
+
+  .hero-title {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+
+  .hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+  }
+
+  .search-bar {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    select,
+    input {
+      padding: 10px;
+      font-size: 1rem;
+      border-radius: $border-radius;
+      border: 1px solid $app-border;
+      width: auto;
+
+      &:focus {
+        border-color: $app-accent;
+        outline: none;
+        box-shadow: 0 0 4px rgba(0, 204, 223, 0.5);
+      }
+    }
+
+    .search-btn {
+      background-color: $app-dark-blue;
+      color: $app-white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: color.scale($app-dark-blue, $lightness: 10%);
+      }
+    }
+  }
+}
+
+/* Features Section */
+.features-section {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-grow: 1; /* Makes the features section take full available space */
+
+  .feature-card {
+    background-color: $app-white;
+    box-shadow: $box-shadow;
+    border-radius: $border-radius;
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+
+    img {
+      width: 80px;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 1rem;
+      color: $app-text-dark;
+    }
+  }
+
+  @media (max-width: $breakpoint-md) {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+/* Footer */
+footer {
+  background-color: $app-dark-blue;
+  color: $app-white;
+  padding: 20px;
+  width: 100%;
+  position: relative;
+
+  .footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        margin-bottom: 10px;
+
+        a {
+          text-decoration: none;
+          color: $app-white;
+          font-size: 0.95rem;
+
+          &:hover {
+            color: color.scale($app-white, $lightness: 10%);
+          }
+        }
+      }
+    }
+  }
+
+  .social-links {
+    margin-top: 15px;
+
+    a {
+      margin-right: 10px;
+      font-size: 1.2rem;
+      color: $app-white;
+
+      &:hover {
+        color: color.scale($app-white, $lightness: 20%);
+      }
+    }
+  }
+}
+
+/* Services Section */
+.services-section {
+  padding: 50px 0;
+  flex-grow: 1;
+
+  .service-card {
+    background-color: $app-light-blue;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: white;
+
+    .service-icon {
+      max-width: 100px;
+      margin-bottom: 10px;
+    }
+
+    .service-title {
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+  }
+}
+
+/* Card Style */
+.card {
+  background-color: $app-white;
+  box-shadow: $box-shadow;
+  border-radius: $border-radius;
+  padding: 1.5rem;
+  margin-bottom: 20px;
+
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: $app-dark-blue;
+  }
+
+  .card-body {
+    font-size: 1rem;
+    color: $app-text-dark;
+  }
+
+  .card-footer {
+    text-align: center;
+
+    .btn {
+      background-color: $app-main;
+      color: $app-white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: $border-radius;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: $app-accent;
+      }
+    }
+  }
+}
+
+/* Responsive Design */
+@media (max-width: $breakpoint-md) {
+  .container {
+    padding: 15px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .features-section {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  footer .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+
+  .card {
+    padding: 1.2rem;
+  }
+}

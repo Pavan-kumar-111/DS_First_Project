@@ -1,0 +1,125 @@
+.searchbox-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 100px;
+  
+    h1 {
+      margin-left: 74px;
+    }
+  
+    .searchbox-input {
+      color: #0c0c0c;
+      margin: 1px;
+      gap: 1px;
+      width: 300px;
+    }
+  
+    .searchbox-search-container {
+      display: flex;
+      color: black;
+      margin-left: 80px;
+      align-items: center;
+  
+      input {
+        margin-left: 2px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 5px;
+        outline: none;
+        background-color: #fcfcfc;
+        border: 2px solid black;
+      }
+  
+      button {
+        width: 80px;
+        padding: 14px 15px;
+        background-color: #007bff;
+        color: white;
+        margin-left: 4px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #0056b3;
+        }
+      }
+    }
+  
+    .searchbox-dropdown {
+      width: 260px;
+      position: absolute;
+      color: black;
+      top: 100%;
+      border: 1px solid #0c0c0c;
+      background-color: white;
+      list-style: none;
+      margin: 10px;
+  
+      li {
+        padding: 8px;
+        cursor: pointer;
+  
+        &:hover {
+          background-color: #f0f0f0;
+        }
+      }
+    }
+  
+    @media (max-width: 768px) {
+      .searchbox-container {
+        width: 100%;
+      }
+  
+      .searchbox-search-container {
+        width: 85%;
+        flex-direction: column;
+      }
+  
+      .searchbox-input {
+        width: 100%;
+      }
+  
+      .searchbox-dropdown {
+        position: relative;
+        width: 100%;
+        margin-top: 5px;
+      }
+  
+      .searchbox-button {
+        width: 100%;
+      }
+    }
+  
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 18px;
+      }
+  
+      .searchbox-container {
+        width: 100%;
+      }
+  
+      .searchbox-search-container {
+        width: 85%;
+        flex-direction: column;
+      }
+  
+      .searchbox-input {
+        width: 100%;
+      }
+  
+      .searchbox-dropdown {
+        position: relative;
+        width: 100%;
+        margin-top: 5px;
+      }
+  
+      .searchbox-button {
+        width: 100%;
+      }
+    }
+  }
+  

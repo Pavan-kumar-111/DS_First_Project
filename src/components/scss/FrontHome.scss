@@ -1,0 +1,189 @@
+.app {
+  .hero-section {
+    background-color:  #bfebf1; /* Subtle aqua background for better aesthetics */
+    padding: 60px 40px; /* Adjusted padding for better user experience */
+    position: relative;
+    border-radius: 35px; /* Modern rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for 3D effect */
+    border: 2px solid rgba(0, 0, 0, 0.1); /* Increased border size */
+    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    margin: 10px 0px;
+
+    &:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 45px;
+    }
+
+    .hero-content {
+      background-color: white;
+      padding: 15px;
+      padding-left: 9%;
+      border-radius: 35px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap; /* Responsive layout */
+      position: relative;
+    }
+
+    .hero-title {
+      font-size: 4.5rem; /* Larger font size for better visibility */
+      font-weight: bold;
+      color: #00796b; /* Primary dark teal */
+      margin-top: 5px;
+      margin-bottom: 0px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.8rem; /* Larger subtitle text */
+      color: #004d40; /* Subtle green */
+      margin-left: 20px;
+      margin-top: 0px;
+      padding-right: 20px; /* Padding to avoid crowding */
+    }
+    .hero-logo {
+      max-width: 450px; /* Larger logo for emphasis */
+      height: auto;
+      margin-left: 20px;
+      margin-right: 100px; /* Auto margin on right side to center it */
+    }
+
+
+    /* Button Styles */
+button {
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50px;
+  background-color: hsl(266, 97%, 49%);
+  font-family: inherit;
+}
+
+.default-btn, .hover-btn {
+  background-color: hsl(266, 97%, 49%);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 5px 10px;
+  border-radius: 50px;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.hover-btn {
+  position: absolute;
+  inset: 0;
+  background-color: #0bd9f4;
+  transform: translate(0%, 100%);
+}
+
+.default-btn span {
+  color: hsl(0, 0%, 100%);
+}
+
+
+button:hover .default-btn {
+  transform: translate(0%, -100%);
+}
+
+button:hover .hover-btn {
+  transform: translate(0%, 0%);
+}
+/* Button with the new animation */
+.btn {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn-primary {
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background-color: hsl(266, 97%, 49%);
+  color: white;
+  font-weight: 500;
+  border-radius: 50px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.btn-primary .default-btn, .btn-primary .hover-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-primary:hover .default-btn {
+  transform: translateY(-100%);
+}
+
+.btn-primary:hover .hover-btn {
+  transform: translateY(0%);
+}
+
+.btn-primary .default-btn span, .btn-primary .hover-btn span {
+  font-size: 16px;
+  text-transform: uppercase;
+}
+    /* Service icon styles */
+    .service-icon {
+      max-width: 250px; /* Increased image size for better prominence */
+      height: auto;
+      margin: 0 20px; /* Less margin for a more compact, aligned look */
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: white;
+      border-radius: 20px;
+
+      &:hover {
+        transform: scale(1.1); /* Slight enlargement on hover */
+        background-color: white;
+        border-radius: 25px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    /* Service icons container */
+    .service-icons-container {
+      display: flex;
+      flex-wrap: wrap; /* Responsive wrapping for small screens */
+      justify-content: center;
+      gap: 30px; /* Increased space between icons */
+      margin-top: 40px;
+    }
+
+    /* Media query for smaller screens */
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center;
+        text-align: center;
+        gap: 20px;
+      }
+
+      .hero-title {
+        font-size: 2.5rem; /* Adjusted for smaller screens */
+        padding-bottom: 5px; /* Reduced padding for tight layout */
+      }
+
+      .hero-subtitle {
+        font-size: 1.4rem; /* Adjusted for smaller screens */
+        margin-bottom: 15px; /* Reduced bottom margin */
+      }
+
+      .hero-logo {
+        max-width: 250px;
+        margin-top: 20px;
+        margin-left: auto; /* Center the logo on smaller screens */
+        margin-right: auto; /* Ensure it stays centered */
+      }
+
+      .service-icon {
+        max-width: 150px; /* Adjusted image size for smaller screens */
+      }
+    }
+  }
+}

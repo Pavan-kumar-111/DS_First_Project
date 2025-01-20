@@ -1,0 +1,237 @@
+.app {
+  .hero-section {
+    background-color: #bfebf1;
+    padding: 60px 40px;
+    position: relative;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin: 10px;
+
+    &:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      border-radius: 45px;
+    }
+
+    .hero-content {
+      background-color: white;
+      padding: 15px 9%;
+      border-radius: 35px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      background-color: #00796b;
+    }
+
+    .hero-text-container {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    .hero-title {
+      font-size: calc(2rem + 2.5vw); /* Dynamic font size */
+      font-weight: bold;
+      color: #ffffff;
+      margin: 5px 0;
+      white-space: nowrap; /* Prevent text wrapping */
+    }
+
+    .specialist-info-container {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 20px;
+      border-radius: 20px;
+      margin-top: 0;
+      background-color: #f0f8ff;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+      .doctor-info-wrapper {
+        display: flex;
+        align-items: center;
+        border-radius: 20px;
+        padding-left: 50px;
+        margin-top: 0;
+        flex-wrap: nowrap; /* Prevent wrapping */
+      }
+
+      .doctor-info {
+        flex: 1;
+        text-align: left;
+        padding-right: 20px;
+      }
+
+      .doctor-name {
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .doctor-specialty,
+      .doctor-hospital,
+      .doctor-rating {
+        font-size: 1.5rem;
+        color: #666;
+        margin: 0;
+      }
+
+      .btn-primary {
+        position: relative;
+        overflow: hidden;
+        outline: none;
+        cursor: pointer;
+        border-radius: 50px;
+        background-color: hsl(266, 97%, 49%);
+        font-family: inherit;
+        margin-top: 10px;
+        padding: 10px 20px;
+        color: #fff;
+        font-size: 1rem;
+        text-transform: uppercase;
+        transition: all 0.3s ease;
+        margin-bottom: 10px;
+
+        &:hover {
+          background-color: hsl(266, 100%, 40%);
+        }
+      }
+
+      .default-btn,
+      .hover-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .hover-btn {
+        position: absolute;
+        inset: 0;
+        background-color: #0bd9f4;
+        transform: translateY(100%);
+      }
+
+      .default-btn span,
+      .hover-btn span {
+        color: #fff;
+      }
+
+      .btn-primary:hover .default-btn {
+        transform: translateY(-100%);
+      }
+
+      .btn-primary:hover .hover-btn {
+        transform: translateY(0%);
+      }
+
+      .doctor-image-container {
+        flex: none;
+        display: flex;
+        justify-content: center;
+        margin-right: 20px;
+      }
+
+      .doctor-image {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .service-icons-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 40px;
+  }
+
+  .service-icon {
+    max-width: 250px;
+    height: auto;
+    margin: 0 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: white;
+    border-radius: 20px;
+
+    &:hover {
+      transform: scale(1.1);
+      background-color: white;
+      border-radius: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+  }
+  @media (max-width: 768px) {
+    .categories-wrapper {
+      .scroll-button {
+        display: none;
+      }
+    }
+
+    .categories-container .categories .category {
+      width: calc(100% - 2rem);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .hero-content {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
+    }
+
+    .hero-title {
+      font-size: calc(1.5rem + 2vw); /* Adjusted dynamic font size for smaller screens */
+      padding-bottom: 5px;
+    }
+
+    .hero-subtitle {
+      font-size: 1.4rem;
+      margin-left: 0;
+      margin-top: 10px;
+      padding-right: 0;
+    }
+
+    .specialist-info-container {
+      flex-direction: column;
+      text-align: center;
+
+      .doctor-info-wrapper {
+        flex-direction: column;
+      }
+
+      .doctor-info {
+        padding-right: 0;
+        margin-bottom: 20px;
+      }
+
+      .doctor-image-container {
+        margin-right: 0;
+      }
+    }
+
+    .service-icon {
+      max-width: 150px;
+    }
+
+    .hero-logo {
+      max-width: 250px;
+      margin-top: 20px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}

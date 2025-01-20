@@ -1,0 +1,172 @@
+.add-doctor-page {
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Use min-height instead of height */
+  margin: 0;
+  padding: 10px 5px; /* Added padding for spacing */
+}
+
+.add-doctor-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 60%; /* Adjusted width for better layout */
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+}
+
+.add-doctor-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 700px; /* Decreased container size */
+  width: 100%;
+}
+
+.add-doctor-form-container {
+  flex: 1;
+  padding: 1.5rem 1rem; /* Reduced padding */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  .add-doctor-heading {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #333;
+    text-align: center;
+  }
+
+  .add-doctor-subheading {
+    text-align: center;
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 1rem;
+  }
+
+  .add-doctor-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns layout */
+    gap: 1rem; /* Space between the columns */
+    width: 100%; /* Full width of the container */
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      width: 90%; /* Further decrease the width of the input fields */
+      margin-bottom: 1.5rem; /* Add more spacing between fields */
+    }
+
+    .form-label {
+      font-size: 1rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-control,
+    .form-select {
+      border-radius: 6px; /* Increased border radius */
+      border: 1px solid #cccccc; /* Updated border color */
+      background-color: #f9f9f9; /* Lighter background */
+      padding: 12px; /* Better padding */
+      width: 100%;
+      font-size: 1rem;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Inner shadow */
+
+      &:focus {
+        border-color: #66afe9;
+        outline: none;
+        box-shadow: 0 0 8px rgba(102, 175, 233, 0.6); /* Updated box shadow */
+      }
+    }
+
+    .error {
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: 0.2rem;
+    }
+
+    .add-doctor-button {
+      background-color: #0cc0df;
+      color: white;
+      border: none;
+      padding: 12px 24px; /* Better padding */
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 10px;
+      margin-left: auto;
+      margin-right: auto;
+      width: 100%;
+      max-width: 200px;
+
+      &:hover {
+        background-color: #1cf380;
+      }
+
+      &:disabled {
+        background-color: #e0e0e0;
+        cursor: not-allowed;
+      }
+    }
+  }
+
+  .alert {
+    width: 100%;
+    max-width: 18rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    text-align: center;
+
+    &.alert-success {
+      background-color: rgb(47, 207, 47);
+      color: white;
+      border: 1px solid #b7b9b7;
+    }
+
+    &.alert-danger {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+  }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .add-doctor-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .add-doctor-form-container {
+    padding: 1rem;
+  }
+
+  .add-doctor-button {
+    width: 100%;
+  }
+
+  .add-doctor-form {
+    grid-template-columns: 1fr; /* Single column on smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .add-doctor-container {
+    padding: 10px;
+  }
+
+  .add-doctor-form-container {
+    padding: 10px;
+  }
+
+  .add-doctor-button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
